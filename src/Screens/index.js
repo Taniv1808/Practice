@@ -1,0 +1,7 @@
+export {default as Login} from './Login/Login'
+export {default as Signup} from './SignUp/Signup'
+export {default as HomePage} from './HomePage/HomePage'
+export {default as OtpVerification} from './OtpVerification/OtpVerification'
+export {default as Cart} from './Cart/Cart'
+export {default as Account} from './Account/Account'
+export {default as Stores} from './Stores/Stores'
