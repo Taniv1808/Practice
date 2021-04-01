@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {View,StyleSheet, FlatList,RefreshControl,ActivityIndicator, TextInput} from 'react-native'
+import Loader from '../../Component/Loader';
 import Test from '../../Component/Test';
 import WrapperContainer from '../../Component/WrapperContainer';
 import actions from '../../redux/actions';
@@ -35,10 +36,8 @@ export default class Login extends Component{
           skip: calcSkip.toString(),
         };
         console.log(data);
-        // console.log(header);
         scrollApi(data)
           .then(res => {
-            // console.log('this is the response: ', res);
             let updatedStateVar = {};
             if (res.data.length > 0) {
               let profilesData = onEndReachCall
@@ -63,12 +62,9 @@ export default class Login extends Component{
             });
           })
           .catch(err => {
-            // console.log('this is the error: ', err);
             this.setState({isLoading: false, isLoadingMore: false});
           });
       };
-    
-
     
 onEndReached=()=>{
     const {isLoadingMore, isNoMoreData} = this.state;
@@ -80,7 +76,6 @@ onEndReached=()=>{
     this.getData(true)
     
 }
-
 
 renderFooter = () => {
     const {isLoadingMore} = this.state;
@@ -100,12 +95,7 @@ renderFooter = () => {
   };
 
   // searchAPi
-  search_api=()=>{
-    let {isLoading}=this.state;
-    find_text({
 
-    })
-  }
   onChange(key) {
     return value => {
       this.setState({
@@ -116,14 +106,13 @@ renderFooter = () => {
     render(){
         
     const { profiles, refreshing,isLoading} = this.state;
-        // const{data}=this.state;
-        // console.log(data);
         
         return(
           <WrapperContainer isLoading={isLoading} >
-           
+           <View style={styles.container}>
            <View style={styles.search}>
             <TextInput placeholder='Search here...' style={{width:290,borderWidth:0.2,borderRadius:10}} onChangeText={this.onChange}/>
+            
           </View>
                 <FlatList
                 refreshControl={
@@ -141,6 +130,7 @@ renderFooter = () => {
                 ItemSeparatorComponent={()=>(
                     <View style={{marginBottom:10}}></View>)}
                     renderItem={({item})=><Test profiles={item}/>}/>
+                    </View>
             </WrapperContainer>
         )
     }
@@ -151,7 +141,7 @@ renderFooter = () => {
 const styles=StyleSheet.create({
     container:{
         backgroundColor:colors.themeClr,
-        flex:1
+        marginBottom:100
     },
     search:{
       marginLeft:30,

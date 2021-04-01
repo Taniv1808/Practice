@@ -61,16 +61,15 @@ export const signUp = (data) => {
         reject(error);
       });
   });
-  
+
 };
 
 export const logoutUsingPhone=()=>{
-    clearUserData().then((res)=>{
+    clearUserData()
       dispatch({
         type:types.LOGOUT,
-        payload:null
+        payload:undefined
       })
-  })
 }
 
 export const loginUsingPhone=(data)=>{

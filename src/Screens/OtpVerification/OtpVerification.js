@@ -6,18 +6,27 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import { CodeField } from 'react-native-confirmation-code-field';
 import Button from '../../Component/Button';
 import Loader from '../../Component/Loader';
 import navigationStrings from '../../constants/navigationStrings';
 import {_OtpVerification} from '../../redux/actions/auth';
 import colors from '../../styles/colors';
-Button
 
+const CELL_COUNT = 5
 export default class OtpVerification extends Component {
   state = {
     isLoading: false,
+    otp:''
   };
   
+  // onChange(key) {
+  //   return value => {
+  //     this.setState({
+  //       [key]: value,
+  //     });
+  //   };
+  // }
   onVerifyOtp = () => {
     let {isLoading} = this.state;
     _OtpVerification({
@@ -40,7 +49,7 @@ export default class OtpVerification extends Component {
       })
   };
   render() {
-    const {isLoading} = this.state;
+    const {isLoading,otp} = this.state;
     return (
       <View style={styles.container}>
         <Text style={styles.input}> OTP VERIFICATION</Text>
@@ -50,8 +59,10 @@ export default class OtpVerification extends Component {
         <View style={styles.txtInput}>
           <TextInput
             style={styles.input3}
-            maxLength={1}
+            maxLength={5}
             keyboardType="number-pad"
+            // onChangeText={this.onChangeOtp(otp)}
+            style={styles.input3}
           />
           <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp} />
           <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp}/>

@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 const Stack = createStackNavigator();
 
 function Routes(props) {
-  console.log(props)
+  // console.log(props)
   return (
     <NavigationContainer>
       <Stack.Navigator>
