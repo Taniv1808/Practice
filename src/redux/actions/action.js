@@ -13,7 +13,7 @@ export function scrollApi(data) {
     })
 }
 
-export function find_text(find) {
-    let searchUrl=`${SEARCH_API}` + `?name=${find}`
+export function find_text(query) {
+    let searchUrl=`${SEARCH_API}` + query
     return apiGet(searchUrl)    
 }

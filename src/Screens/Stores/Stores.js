@@ -1,89 +1,125 @@
-import React,{Component} from 'react'
-import {View,Text,StyleSheet,TextInput, TouchableOpacity,FlatList} from 'react-native'
-import colors from '../../styles/colors'
-import Button from '../../Component/Button'
-import Loader from '../../Component/Loader'
-import actions from '../../redux/actions'
-import { find_text } from '../../redux/actions/action'
-import Test from '../../Component/Test'
-import { ActivityIndicator } from 'react-native-paper'
+import React, {Component} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
+import colors from '../../styles/colors';
+import {find_text} from '../../redux/actions/action';
+import Test from '../../Component/Test';
+import {ActivityIndicator} from 'react-native-paper';
+import Geolocation from 'react-native-geolocation-service';
+import {locationPermission} from '../../utils/permissions';
 
-export default class Stores extends Component{
-    state={
-        name:'',
-        search:[],
-        isLoading:false,
-        
+export default class Stores extends Component {
+  state = {
+    name: '',
+    search: [],
+    isLoading: false,
+  };
+
+  apicall = query => {
+    const {name} = this.state;
+    find_text(query)
+      .then(res => {
+        console.log(res.data, 'name');
+        this.setState({search: [...res.data], isLoading: false});
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  onChangeText = val => {
+    let {name} = this.state;
+    
+    this.setState({name: val});
+    let query = `?name=${name}`;
+    // console.log(name);
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
     }
-    
-    apicall = () => {
-        const {name} = this.state;
-        find_text(name)
-          .then(res => {
-            console.log(res.data, 'name');
-            this.setState({search: [...res.data]});
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      };
+    this.searchTimeout = setTimeout(() => {
+      this.setState({
+        isLoading: true,
+      });
+      this.apicall(query);
+    }, 600);
+  };
 
-      onChangeText = val => {
-          let{name} = this.state
-        this.setState({name: val});
-        console.log(name)
-        if (this.searchTimeout) {
-          clearTimeout(this.searchTimeout);
-        }
-        this.searchTimeout = setTimeout(() => {
-             this.apicall()
-            
-        }, 600);
-      };
-    
+  locationPermission = () => {
+    let coordinates = [76.7794179, 30.7333148];
+    coordinates = JSON.stringify(coordinates);
+    let query = `?coordinates=${coordinates}`;
+    this.apicall(query);
+  };
 
-    render(){
-        const {isLoading,search}=this.state
-        return(
-            <View style={styles.container}>
-                <Text style={styles.input}>Stores</Text>
-                <View style={styles.search}>
-            <TextInput placeholder='Search here...' style={{width:190,borderWidth:0.2,borderRadius:10,height:40,marginTop:2}} onChangeText={this.onChangeText}/>
-            <TouchableOpacity>
-                <Text style={{margin:10,borderWidth:0.2,width:70,height:20,textAlign:'center',borderRadius:10,backgroundColor:'#dcdcdc'}}>Search</Text>
-            </TouchableOpacity>
-            <ActivityIndicator style={{position:'absolute',marginLeft:80,marginTop:10}}/>
-          </View>
-          <FlatList
-            data={search}
-            numColumns={2}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={key => key}
-            renderItem={({item})=>(
-                <Test profiles={item}/>
-            )}
+  render() {
+    const {search, isLoading} = this.state;
+    return (
+      <View style={styles.container}>
+        <Text style={styles.input}>Stores</Text>
+        <View style={styles.search}>
+          <TextInput
+            placeholder="Search here..."
+            style={{
+              width: 290,
+              borderWidth: 0.2,
+              borderRadius: 10,
+              height: 40,
+              marginTop: 2,
+            }}
+            onChangeText={this.onChangeText}
           />
-          <Loader isLoading={isLoading}/>
-            </View>
-        )
-    }
+          <TouchableOpacity onPress={this.locationPermission}>
+            <Text
+              style={{
+                margin: 10,
+                borderWidth: 0.2,
+                width: 270,
+                height: 20,
+                textAlign: 'center',
+                borderRadius: 10,
+                backgroundColor: '#dcdcdc',
+              }}>
+              Find Near Me
+            </Text>
+          </TouchableOpacity>
+          {isLoading ? (
+            <ActivityIndicator
+              style={{position: 'absolute', marginLeft: 230, marginTop: 10}}
+            />
+          ) : null}
+        </View>
+        <FlatList
+          data={search}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={key => key}
+          renderItem={({item}) => <Test profiles={item} />}
+        />
+      </View>
+    );
+  }
 }
 
 // StyleSheet
-const styles=StyleSheet.create({
-    container:{
-        backgroundColor:colors.themeClr,
-        flex:1,  
-    },
-    input:{
-        textAlign:'center',
-        fontSize:20,
-        marginTop:20
-    },
-    search:{
-        marginLeft:30,
-        marginTop:30,
-        marginBottom:10,
-        flexDirection:'row'
-      }
-})
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.themeClr,
+    flex: 1,
+  },
+  input: {
+    textAlign: 'center',
+    fontSize: 20,
+    marginTop: 20,
+  },
+  search: {
+    marginLeft: 30,
+    marginTop: 30,
+    marginBottom: 10,
+  },
+});
