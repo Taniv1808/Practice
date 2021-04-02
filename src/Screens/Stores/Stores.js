@@ -77,13 +77,15 @@ export default class Stores extends Component {
           <TouchableOpacity onPress={this.locationPermission}>
             <Text
               style={{
-                margin: 10,
+                marginLeft: 35,
+                marginTop:10,
                 borderWidth: 0.2,
-                width: 270,
-                height: 20,
+                width: 220,
+                height: 30,
                 textAlign: 'center',
                 borderRadius: 10,
                 backgroundColor: '#dcdcdc',
+                padding:4,
               }}>
               Find Near Me
             </Text>
