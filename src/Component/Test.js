@@ -35,7 +35,7 @@ const styles=StyleSheet.create({
         width:130,
         height:120,
         resizeMode:'contain',
-        borderRadius:10
+        borderRadius:10,
     },
     txt:{
         textAlign:"center"

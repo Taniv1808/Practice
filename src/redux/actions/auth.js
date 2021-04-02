@@ -65,6 +65,7 @@ export const signUp = (data) => {
 };
 
 export const logoutUsingPhone=()=>{
+  
     clearUserData()
       dispatch({
         type:types.LOGOUT,

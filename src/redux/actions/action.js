@@ -13,13 +13,7 @@ export function scrollApi(data) {
     })
 }
 
-export function find_text(data) {
-    return new Promise((resolve,reject)=>{
-        apiGet(SEARCH_API,data).then(res=>{
-            resolve(res)
-        }).catch(err=>{
-            reject(err)
-        })
-    })
-    
+export function find_text(find) {
+    let searchUrl=`${SEARCH_API}` + `?name=${find}`
+    return apiGet(searchUrl)    
 }

@@ -17,7 +17,6 @@ export default function (state = initial_state, action) {
             return{
                 ...state,
                 userData:action.payload
-
             }
         }
         default: {

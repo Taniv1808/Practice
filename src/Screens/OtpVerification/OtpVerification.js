@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity,
 } from 'react-native';
 import { CodeField } from 'react-native-confirmation-code-field';
 import Button from '../../Component/Button';

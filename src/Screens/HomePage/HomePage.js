@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
-import {View,StyleSheet, FlatList,RefreshControl,ActivityIndicator, TextInput} from 'react-native'
+import {View,StyleSheet, FlatList,RefreshControl,ActivityIndicator, TextInput, TouchableOpacity,Text} from 'react-native'
 import Loader from '../../Component/Loader';
 import Test from '../../Component/Test';
 import WrapperContainer from '../../Component/WrapperContainer';
 import actions from '../../redux/actions';
 import { find_text, scrollApi } from '../../redux/actions/action';
 import colors from '../../styles/colors';
-
+import Button from '../../Component/Button'
 const LIMIT='10'
 
 export default class Login extends Component{
@@ -18,6 +18,7 @@ export default class Login extends Component{
         isNoMoreData: false,
         isListEnd:false,
         refreshing: false,
+        isSearch:false
     }
    
 
@@ -110,10 +111,7 @@ renderFooter = () => {
         return(
           <WrapperContainer isLoading={isLoading} >
            <View style={styles.container}>
-           <View style={styles.search}>
-            <TextInput placeholder='Search here...' style={{width:290,borderWidth:0.2,borderRadius:10}} onChangeText={this.onChange}/>
-            
-          </View>
+                <Text style={{textAlign:'center',fontSize:30}}>Images</Text>
                 <FlatList
                 refreshControl={
                     <RefreshControl 
@@ -131,6 +129,7 @@ renderFooter = () => {
                     <View style={{marginBottom:10}}></View>)}
                     renderItem={({item})=><Test profiles={item}/>}/>
                     </View>
+                   
             </WrapperContainer>
         )
     }
@@ -141,13 +140,8 @@ renderFooter = () => {
 const styles=StyleSheet.create({
     container:{
         backgroundColor:colors.themeClr,
-        marginBottom:100
+        marginBottom:30
     },
-    search:{
-      marginLeft:30,
-      marginTop:10,
-      marginBottom:10
-    }
 
 })
 

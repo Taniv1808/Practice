@@ -7,7 +7,7 @@ import colors from '../styles/colors';
 const WrapperContainer = ({
   children,
   bgColor = colors.themeClr,
-  statusBarColor = colors.themeClr,
+  statusBarColor = colors.cardBack,
   barStyle = 'light-content',
 }) => {
   return (
