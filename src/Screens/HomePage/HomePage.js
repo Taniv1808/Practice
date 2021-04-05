@@ -7,6 +7,7 @@ import actions from '../../redux/actions';
 import { find_text, scrollApi } from '../../redux/actions/action';
 import colors from '../../styles/colors';
 import Button from '../../Component/Button'
+import {createDrawerNavigator} from '@react-navigation/drawer'
 const LIMIT='10'
 
 export default class Login extends Component{

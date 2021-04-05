@@ -6,6 +6,7 @@ import store from './src/redux/store'
 import SplashScreen from 'react-native-splash-screen'
 import { getUserData } from './src/utils/utils'
 import { saveUserData } from './src/redux/actions/auth'
+import { requestUserPermission } from './src/utils/permissions'
 export default class App extends Component{
 
 componentDidMount=()=>{
@@ -16,6 +17,7 @@ componentDidMount=()=>{
       console.log(error, 'error');
     })
     SplashScreen.hide();
+    requestUserPermission();
   }
   render(){
     return(
