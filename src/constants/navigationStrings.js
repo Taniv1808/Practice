@@ -5,5 +5,6 @@ export default{
     OTP_VERIFICATION:'otp_verification',
     ACCOUNT:'account',
     CART:'cart',
-    STORES:'stores'
+    STORES:'stores',
+    CHART:'chart'
 }

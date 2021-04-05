@@ -2,10 +2,11 @@ import React from 'react'
 import{Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import navigationStrings from '../constants/navigationStrings'
-import { Account, Cart, HomePage, Stores } from '../Screens'
+import { Account, Cart, Chart, HomePage, Stores } from '../Screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 import imagePath from '../constants/imagePath'
 Cart
+Chart
 Account
 Stores
 const Tab=createBottomTabNavigator()
@@ -38,12 +39,12 @@ export default function BottomTabNavigator(){
               }
               }}/>
             <Tab.Screen 
-            name={navigationStrings.CART}
-            component={Cart}
+            name={navigationStrings.CHART}
+            component={Chart}
             options={{
-                tabBarLabel: 'Cart',
+                tabBarLabel: 'Chart',
                 tabBarIcon: ({tintColor }) => {
-                  return <Image source={require('../assets/images/cart.png')} style={{width:30,height:30}}/>
+                  return <Image source={require('../assets/images/chart.png')} style={{width:30,height:30}}/>
               }
               }}/>
               <Tab.Screen 

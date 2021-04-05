@@ -12,13 +12,10 @@ componentDidMount=()=>{
     getUserData().then((res)=>{
       console.log(res, 'userData');
       saveUserData(res.data);
-      setTimeOut=()=>{
-        SplashScreen.hide();
-      }
     }).catch(error=>{
       console.log(error, 'error');
     })
-    
+    SplashScreen.hide();
   }
   render(){
     return(
