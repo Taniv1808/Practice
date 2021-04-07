@@ -19,7 +19,8 @@ export default class Login extends Component{
         isNoMoreData: false,
         isListEnd:false,
         refreshing: false,
-        isSearch:false
+        isSearch:false,
+        isVisible:false
     }
    
 
@@ -105,9 +106,21 @@ renderFooter = () => {
       });
     };
   }
+
+  openModal=()=>{
+    this.setState({
+      isVisible:true
+    })
+  }
+
+  closeModal=()=>{
+    this.setState({
+      isVisible:false
+    })
+  }
     render(){
         
-    const { profiles, refreshing,isLoading} = this.state;
+    const { profiles, refreshing,isLoading,isVisible} = this.state;
         
         return(
           <WrapperContainer isLoading={isLoading} >
@@ -128,7 +141,7 @@ renderFooter = () => {
                 ListFooterComponent={this.renderFooter}
                 ItemSeparatorComponent={()=>(
                     <View style={{marginBottom:10}}></View>)}
-                    renderItem={({item})=><Test profiles={item}/>}/>
+                    renderItem={({item})=><Test profiles={item} open={this.openModal} close={this.closeModal} isModal={isVisible}/>}/>
                     </View>
                    
             </WrapperContainer>
