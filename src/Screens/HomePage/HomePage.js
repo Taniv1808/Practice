@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {View,StyleSheet, FlatList,RefreshControl,ActivityIndicator, TextInput, TouchableOpacity,Text} from 'react-native'
+import {View,StyleSheet, FlatList,RefreshControl,ActivityIndicator,Text} from 'react-native'
 import Loader from '../../Component/Loader';
 import Test from '../../Component/Test';
 import WrapperContainer from '../../Component/WrapperContainer';

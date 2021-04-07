@@ -7,7 +7,7 @@ import * as shape from 'd3-shape';
 export default class Chart extends Component {
   render() {
     const fill = 'rgb(129, 30, 144)';
-    const data = [20,30,50,75,-2,-32,null,75,undefined,1,0,23,null,24,20,-27,-70,];
+    const data = [20,30,50,75,-2,-32,null,75,undefined,1,-23,34,89,null,24,20,-27,-70,];
     const newColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
  
     const pieChartData = data

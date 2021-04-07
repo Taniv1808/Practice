@@ -2,10 +2,9 @@ import React from 'react'
 import{Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import navigationStrings from '../constants/navigationStrings'
-import { Account, Cart, Chart, HomePage, Stores } from '../Screens'
+import { Account, Chart, HomePage, Stores } from '../Screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 import imagePath from '../constants/imagePath'
-Cart
 Chart
 Account
 Stores
