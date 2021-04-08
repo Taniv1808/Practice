@@ -2,7 +2,7 @@ import React from 'react'
 import{Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import navigationStrings from '../constants/navigationStrings'
-import { Account, Chart, HomePage, Stores } from '../Screens'
+import { Account, Chart, Chat, HomePage, OneToOneConversation, Stores } from '../Screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 import imagePath from '../constants/imagePath'
 Chart
@@ -45,6 +45,15 @@ export default function BottomTabNavigator(){
                 tabBarIcon: ({tintColor }) => {
                   return <Image source={require('../assets/images/chart.png')} style={{width:30,height:30}}/>
               }
+              }}/>
+              <Tab.Screen
+              name={navigationStrings.CHAT}
+              component={Chat}
+              options={{
+                  tabBarLabel:'Chat',
+                  tabBarIcon:({tintColor})=>{
+                      return<Image source={require('../assets/images/chat.png')} style={{width:30,height:30}}/>
+                  }
               }}/>
               <Tab.Screen 
             name={navigationStrings.ACCOUNT}

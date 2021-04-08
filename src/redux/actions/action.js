@@ -1,4 +1,4 @@
-import { SCROLL_API, SEARCH_API } from "../../config/urls";
+import { CONVERSATION_API, OneToOneConversation_API, SCROLL_API, SEARCH_API } from "../../config/urls";
 import { apiGet, apiPost } from "../../utils/utils";
 import types from "../types";
 
@@ -16,4 +16,13 @@ export function scrollApi(data) {
 export function find_text(query) {
     let searchUrl=`${SEARCH_API}` + query
     return apiGet(searchUrl)    
+}
+
+export function conversation(query) {
+    return apiGet(`${CONVERSATION_API}${query}`)
+}
+
+
+export function  OneToOneText(query='') {
+    return apiGet(`${OneToOneConversation_API}${query}`)
 }

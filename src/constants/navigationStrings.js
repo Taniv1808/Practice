@@ -6,5 +6,7 @@ export default{
     ACCOUNT:'account',
     CART:'cart',
     STORES:'stores',
-    CHART:'chart'
+    CHART:'chart',
+    CHAT:'chat',
+    ONE_TO_ONE:'OneToOne'
 }

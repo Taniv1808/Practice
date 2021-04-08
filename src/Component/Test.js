@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {View,Text, Image,StyleSheet,Dimensions,Modal} from 'react-native'
 import colors from '../styles/colors'
 import ImageZoom from 'react-native-image-pan-zoom'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-
+// import socketService from "blalbal"
 export default function Test(props){
     const{profiles,open,close,isModal}=props
     
+    // useEffect(()=>{
+    //     socketService.initialsock(userData.accessToken)
+    // })
     return(
         
         <View style={styles.container}>

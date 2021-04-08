@@ -3,5 +3,6 @@ export default{
     btnColor:`#dda0dd`,
     realColor:`#5f9ea0`,
     cardBack:`#dcdcdc`,
-    txtColor:'red'
+    txtColor:'red',
+    chat:'#90ee90'
 }
