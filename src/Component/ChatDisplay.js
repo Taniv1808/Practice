@@ -30,7 +30,7 @@ export default function ChatDisplay(props) {
         
       </View>
       </TouchableOpacity>
-      <Image source={imagePath.delete} style={{width:20,height:20,marginLeft:'auto',marginTop:-20}}/>
+      <Image source={imagePath.delete} style={styles.del}/>
     </View>
   );
 }
@@ -54,4 +54,8 @@ const styles = StyleSheet.create({
   active: {
     flexDirection: 'row',
   },
+  del:{width:20,
+    height:20,
+    marginLeft:'auto',
+    marginTop:-20}
 });

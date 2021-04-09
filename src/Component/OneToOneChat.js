@@ -6,11 +6,11 @@ export default function OneToOneChat(props) {
     let item=props.route.params.xyz
     return(
         <View style={styles.container}>
-            <Text style={{textAlign:'center',fontSize:18,fontFamily:fontFamily.regular}}>Private Room</Text>
+            <Text style={styles.txt}>Private Room</Text>
             <View style={styles.main}>
             <Image
             source={{uri: item.userInfo.profileImg[0].thumbnail}}
-            style={{width: 80, height: 80, borderRadius: 40}}
+            style={styles.img}
           />
           <View style={styles.txt1}>
           <Text>{item.userInfo.fullName}</Text>
@@ -38,4 +38,14 @@ const styles=StyleSheet.create({
       txt1: {
         margin: 10,
       },
+      txt:{
+        textAlign:'center',
+        fontSize:18,
+        fontFamily:fontFamily.regular
+      },
+      img:{
+        width: 80, 
+        height: 80, 
+        borderRadius: 40
+      }
 })
