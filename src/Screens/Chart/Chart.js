@@ -4,6 +4,7 @@ import {BarChart, Grid, AreaChart,LineChart,PieChart} from 'react-native-svg-cha
 import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
 import * as shape from 'd3-shape';
+import styles from './styles';
 export default class Chart extends Component {
   render() {
     const fill = 'rgb(129, 30, 144)';
@@ -55,21 +56,3 @@ export default class Chart extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  bar: {
-    height: 300,
-    width: 300,
-    marginHorizontal: 30,
-    // marginTop:30
-  },
-  main: {
-    textAlign: 'center',
-    fontFamily: fontFamily.regular,
-    marginBottom:20,
-    marginTop: 30,
-    fontSize: 20,
-    color: colors.btnColor,
-    
-  },
- 
-});

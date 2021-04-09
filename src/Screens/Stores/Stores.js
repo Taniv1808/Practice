@@ -13,6 +13,7 @@ import Test from '../../Component/Test';
 import {ActivityIndicator} from 'react-native-paper';
 import Geolocation from 'react-native-geolocation-service';
 import {locationPermission} from '../../utils/permissions';
+import styles from './styles';
 
 export default class Stores extends Component {
   state = {
@@ -109,19 +110,3 @@ export default class Stores extends Component {
 }
 
 // StyleSheet
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.themeClr,
-    flex: 1,
-  },
-  input: {
-    textAlign: 'center',
-    fontSize: 20,
-    marginTop: 20,
-  },
-  search: {
-    marginLeft: 30,
-    marginTop: 30,
-    marginBottom: 10,
-  },
-});

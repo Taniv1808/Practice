@@ -3,9 +3,6 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
-import colors from '../styles/colors';
-import fontFamily from '../styles/fontFamily';
-
 
 export default function ChatDisplay(props) {
   const {data} = props;

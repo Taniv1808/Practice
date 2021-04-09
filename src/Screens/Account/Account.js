@@ -4,12 +4,12 @@ import colors from '../../styles/colors';
 import Button from '../../Component/Button';
 import navigationStrings from '../../constants/navigationStrings';
 import actions from '../../redux/actions';
-import {logoutUsingPhone} from '../../redux/actions/auth';
 import {showMessage} from 'react-native-flash-message';
 import QRCode from 'react-native-qrcode-svg';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import imagePath from '../../constants/imagePath';
+import styles from './styles';
 export default class Account extends Component {
   state = {
     isVisible: false,
@@ -27,7 +27,7 @@ export default class Account extends Component {
   };
 
   logout() {
-    logoutUsingPhone();
+    actions.logoutUsingPhone();
     showMessage({
       type: 'success',
       icon: 'success',
@@ -85,44 +85,4 @@ export default class Account extends Component {
   }
 }
 
-// StyleSheet
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.themeClr,
-    flex: 1,
-  },
-  input: {
-    textAlign: 'center',
-    marginTop: 20,
-    fontSize: 20,
-  },
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
-    marginTop:30,
-    textAlign:'center'
-
-  },
-  textBold: {
-    fontWeight: '500',
-    color: 'blue',
-  },
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
-    marginTop:50
-  },
-  buttonTouchable: {
-    padding: 16
-  },
-  qr:{
-    width:250,
-    height:250,
-    marginLeft:25,
-    marginTop:30
-  }
-  
-});

@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
-import { CodeField } from 'react-native-confirmation-code-field';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {CodeField} from 'react-native-confirmation-code-field';
 import Button from '../../Component/Button';
 import Loader from '../../Component/Loader';
 import navigationStrings from '../../constants/navigationStrings';
-import {_OtpVerification} from '../../redux/actions/auth';
+import actions from '../../redux/actions';
 import colors from '../../styles/colors';
+import styles from './styles';
 
-const CELL_COUNT = 5
+const CELL_COUNT = 5;
 export default class OtpVerification extends Component {
   state = {
     isLoading: false,
-    otp:''
+    otp: '',
   };
-  
+
   // onChange(key) {
   //   return value => {
   //     this.setState({
@@ -28,12 +24,13 @@ export default class OtpVerification extends Component {
   // }
   onVerifyOtp = () => {
     let {isLoading} = this.state;
-    _OtpVerification({
-      userId: this.props.route.params.data,
-      otp: '12345',
-      deviceToken: '123',
-      registerFrom: 'ANDROID',
-    })
+    actions
+      ._OtpVerification({
+        userId: this.props.route.params.data,
+        otp: '12345',
+        deviceToken: '123',
+        registerFrom: 'ANDROID',
+      })
       .then(res => {
         isLoading = true;
         console.log(res);
@@ -43,12 +40,12 @@ export default class OtpVerification extends Component {
         console.log(error);
         isLoading = false;
       });
-      this.setState({
-          isLoading:true
-      })
+    this.setState({
+      isLoading: true,
+    });
   };
   render() {
-    const {isLoading,otp} = this.state;
+    const {isLoading, otp} = this.state;
     return (
       <View style={styles.container}>
         <Text style={styles.input}> OTP VERIFICATION</Text>
@@ -63,57 +60,32 @@ export default class OtpVerification extends Component {
             // onChangeText={this.onChangeOtp(otp)}
             style={styles.input3}
           />
-          <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp} />
-          <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp}/>
-          <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp}/>
-          <TextInput style={styles.input3} keyboardType="number-pad" onChangeText={this.onChangeOtp}/>
+          <TextInput
+            style={styles.input3}
+            keyboardType="number-pad"
+            onChangeText={this.onChangeOtp}
+          />
+          <TextInput
+            style={styles.input3}
+            keyboardType="number-pad"
+            onChangeText={this.onChangeOtp}
+          />
+          <TextInput
+            style={styles.input3}
+            keyboardType="number-pad"
+            onChangeText={this.onChangeOtp}
+          />
+          <TextInput
+            style={styles.input3}
+            keyboardType="number-pad"
+            onChangeText={this.onChangeOtp}
+          />
         </View>
         <View style={{marginTop: 20}}>
-          
-          <Button name='Verify Account' pressIt={this.onVerifyOtp}/>
+          <Button name="Verify Account" pressIt={this.onVerifyOtp} />
         </View>
         <Loader isLoading={isLoading} />
       </View>
     );
   }
 }
-
-// Stylesheet
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.themeClr,
-    flex: 1,
-  },
-  input: {
-    marginTop: 30,
-    textAlign: 'center',
-    fontSize: 20,
-  },
-  btn: {
-    backgroundColor: colors.btnColor,
-    borderWidth: 0.2,
-    marginTop: 20,
-    width: 120,
-    height: 30,
-    marginLeft: 130,
-    borderRadius: 25,
-  },
-  txtInput: {
-    flexDirection: 'row',
-    marginTop: 40,
-    marginLeft: 20,
-    justifyContent: 'space-between',
-  },
-  input3: {
-    borderWidth: 0.2,
-    width: 50,
-    borderRadius: 20,
-    marginRight: 14,
-    textAlign: 'center',
-  },
-  input2: {
-    lineHeight: 20,
-    textAlign: 'center',
-    marginTop: 20,
-  },
-});

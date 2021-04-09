@@ -4,5 +4,6 @@ export default{
     realColor:`#5f9ea0`,
     cardBack:`#dcdcdc`,
     txtColor:'red',
-    chat:'#90ee90'
+    chat:'#90ee90',
+    centertxt:'#777'
 }
