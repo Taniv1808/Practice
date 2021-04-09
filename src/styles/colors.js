@@ -5,5 +5,6 @@ export default{
     cardBack:`#dcdcdc`,
     txtColor:'red',
     chat:'#90ee90',
-    centertxt:'#777'
+    centertxt:'#777',
+    chart:'rgb(129, 30, 144)'
 }
