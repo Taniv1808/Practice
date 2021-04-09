@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {showMessage} from 'react-native-flash-message';
 import Button from '../../Component/Button';
+import strings from '../../constants/lang';
 import navigationStrings from '../../constants/navigationStrings';
 import colors from '../../styles/colors';
 import validation from '../../utils/validation';
@@ -77,27 +78,27 @@ export default class Signup extends Component {
     // const{isLoading}=this.state
     return (
       <View style={styles.container}>
-        <Text style={styles.input}>SIGNUP</Text>
+        <Text style={styles.input}>{strings.SIGNUP}</Text>
         <View style={styles.input2}>
-          <Text style={styles.input3}>Name</Text>
+          <Text style={styles.input3}>{strings.NAME}</Text>
           <TextInput
             placeholder="Name"
             style={styles.placeText}
             onChangeText={this.onChange('name')}
           />
-          <Text style={styles.input3}>Mobile</Text>
+          <Text style={styles.input3}>{strings.MOBILE}</Text>
           <TextInput
             placeholder="Mobile"
             style={styles.placeText}
             onChangeText={this.onChange('mobile')}
           />
-          <Text style={styles.input3}>Password</Text>
+          <Text style={styles.input3}>{strings.PASSWORD}</Text>
           <TextInput
             placeholder="Password"
             style={styles.placeText}
             onChangeText={this.onChange('password')}
           />
-          <Text style={styles.input3}>Confirm Password</Text>
+          <Text style={styles.input3}>{strings.CONFIRM_PASSWORD}</Text>
           <TextInput
             placeholder="Confirm Password"
             style={styles.placeText}
@@ -106,7 +107,7 @@ export default class Signup extends Component {
         </View>
         
         <TouchableOpacity onPress={this.isValidData()} style={styles.btn}>
-          <Text style={{textAlign: 'center', padding: 4}}>Signup</Text>
+          <Text style={{textAlign: 'center', padding: 4}}>{strings.SIGNUP}</Text>
         </TouchableOpacity>
         <View style={styles.bottom}>
           <Text>New Customer?</Text>
@@ -114,7 +115,7 @@ export default class Signup extends Component {
             onPress={() => {
               this.props.navigation.navigate(navigationStrings.LOGIN);
             }}>
-            <Text style={{color: 'blue'}}>Login</Text>
+            <Text style={{color: 'blue'}}>{strings.LOGIN}</Text>
           </TouchableOpacity>
         </View>
       </View>

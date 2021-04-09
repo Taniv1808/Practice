@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ChatDisplay from '../../Component/ChatDisplay';
+import strings from '../../constants/lang';
 import navigationStrings from '../../constants/navigationStrings';
 import actions from '../../redux/actions';
 import {conversation, OneToOneText} from '../../redux/actions/action';
@@ -61,7 +62,7 @@ export default class Chat extends Component {
     const {data} = this.state;
     return (
       <View>
-        <Text style={styles.txt}>Chat Room</Text>
+        <Text style={styles.txt}>{strings.CHAT_ROOM}</Text>
         <FlatList
           data={data}
           numColumns={1}

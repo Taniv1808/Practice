@@ -10,6 +10,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import imagePath from '../../constants/imagePath';
 import styles from './styles';
+import strings from '../../constants/lang';
 export default class Account extends Component {
   state = {
     isVisible: false,
@@ -44,19 +45,19 @@ export default class Account extends Component {
     const {isVisible} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.input}>Account</Text>
+        <Text style={styles.input}>{strings.ACCOUNT}</Text>
 
         <Button name="Logout" pressIt={this.logout} />
         <TouchableOpacity onPress={this.openModal}>
-          <Text style={{textAlign:'center',marginTop:20,fontSize:20}}>Show My QR Code</Text>
+          <Text style={{textAlign:'center',marginTop:20,fontSize:20}}>{strings.SHOW_MY_QR_CODE}</Text>
         </TouchableOpacity>
         <Modal visible={isVisible}>
           <View style={{alignItems: 'center', marginTop: 20}}>
-            <Text style={{fontSize: 20}}>QR Code</Text>
+            <Text style={{fontSize: 20}}>{strings.QR_CODE}</Text>
             <QRCode value="www.google.com" size={200}/>
           </View>
           <TouchableOpacity onPress={this.closeModal}>
-            <Text style={{textAlign:'center',marginTop:20}}>Close</Text>
+            <Text style={{textAlign:'center',marginTop:20}}>{strings.CLOSE}</Text>
           </TouchableOpacity>
         </Modal>
         <QRCodeScanner
@@ -65,7 +66,7 @@ export default class Account extends Component {
           topContent={
             <Text style={styles.centerText}>
               
-              <Text style={styles.textBold}>Scan Here</Text>
+              <Text style={styles.textBold}>{strings.SCAN_HERE}</Text>
               
             </Text>
           }
@@ -74,7 +75,7 @@ export default class Account extends Component {
           }
           bottomContent={
             <TouchableOpacity style={styles.buttonTouchable}>
-              <Text style={styles.buttonText}>Let's Scan!</Text>
+              <Text style={styles.buttonText}>{strings.LETS_SCAN}</Text>
             </TouchableOpacity>
           }
           fadeIn={true}

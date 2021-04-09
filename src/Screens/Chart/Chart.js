@@ -11,6 +11,7 @@ import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
 import * as shape from 'd3-shape';
 import styles from './styles';
+import strings from '../../constants/lang';
 export default class Chart extends Component {
   render() {
     const fill = colors.chart;
@@ -53,7 +54,7 @@ export default class Chart extends Component {
 
     return (
       <ScrollView>
-        <Text style={styles.main}>BAR GRAPH</Text>
+        <Text style={styles.main}>{strings.BAR_GRAPH}</Text>
         <BarChart
           style={styles.bar}
           data={data}
@@ -61,7 +62,7 @@ export default class Chart extends Component {
           contentInset={{top: 30, bottom: 30}}>
           <Grid />
         </BarChart>
-        <Text style={styles.main}>AREA CHART</Text>
+        <Text style={styles.main}>{strings.AREA_CHART}</Text>
         <AreaChart
           style={styles.bar}
           data={data}
@@ -70,7 +71,7 @@ export default class Chart extends Component {
           svg={{fill}}>
           <Grid />
         </AreaChart>
-        <Text style={styles.main}>LINE CHART</Text>
+        <Text style={styles.main}>{strings.LINE_CHART}</Text>
         <LineChart
           style={styles.bar}
           data={data}
@@ -78,7 +79,7 @@ export default class Chart extends Component {
           contentInset={{top: 20, bottom: 20}}>
           <Grid />
         </LineChart>
-        <Text style={styles.main}>PIE CHART</Text>
+        <Text style={styles.main}>{strings.PIE_CHART}</Text>
         <PieChart style={styles.bar} data={pieChartData} />
       </ScrollView>
     );

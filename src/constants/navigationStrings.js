@@ -8,5 +8,5 @@ export default{
     STORES:'stores',
     CHART:'chart',
     CHAT:'chat',
-    ONE_TO_ONE:'OneToOne'
+    ONE_TO_ONE:'one_to_one'
 }

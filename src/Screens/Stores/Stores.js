@@ -14,6 +14,7 @@ import {ActivityIndicator} from 'react-native-paper';
 import Geolocation from 'react-native-geolocation-service';
 import {locationPermission} from '../../utils/permissions';
 import styles from './styles';
+import strings from '../../constants/lang';
 
 export default class Stores extends Component {
   state = {
@@ -62,7 +63,7 @@ export default class Stores extends Component {
     const {search, isLoading} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.input}>Stores</Text>
+        <Text style={styles.input}>{strings.STORES}</Text>
         <View style={styles.search}>
           <TextInput
             placeholder="Search here..."
@@ -88,7 +89,7 @@ export default class Stores extends Component {
                 backgroundColor: '#dcdcdc',
                 padding:4,
               }}>
-              Find Near Me
+              {strings.FIND_NEAR_ME}
             </Text>
           </TouchableOpacity>
           {isLoading ? (
@@ -109,4 +110,3 @@ export default class Stores extends Component {
   }
 }
 
-// StyleSheet

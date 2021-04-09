@@ -1,12 +1,13 @@
 import React from 'react'
 import {View,Text,StyleSheet,Image} from 'react-native'
+import strings from '../constants/lang'
 import fontFamily from '../styles/fontFamily'
 
 export default function OneToOneChat(props) {
     let item=props.route.params.xyz
     return(
         <View style={styles.container}>
-            <Text style={styles.txt}>Private Room</Text>
+            <Text style={styles.txt}>{strings.PRIVATE_ROOM}</Text>
             <View style={styles.main}>
             <Image
             source={{uri: item.userInfo.profileImg[0].thumbnail}}

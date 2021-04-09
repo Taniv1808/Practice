@@ -10,6 +10,7 @@ import {showMessage} from 'react-native-flash-message';
 import Button from '../../Component/Button';
 import Loader from '../../Component/Loader';
 import WrapperContainer from '../../Component/WrapperContainer';
+import strings from '../../constants/lang';
 import navigationStrings from '../../constants/navigationStrings';
 import actions from '../../redux/actions';
 import colors from '../../styles/colors';
@@ -77,15 +78,15 @@ export default class Login extends Component {
     const {isLoading} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.input}>LOGIN</Text>
+        <Text style={styles.input}>{strings.LOGIN}</Text>
         <View style={styles.input2}>
-          <Text style={styles.input3}>Mobile</Text>
+          <Text style={styles.input3}>{strings.MOBILE}</Text>
           <TextInput
             placeholder="Mobile"
             style={styles.placeText}
             onChangeText={this.onChange('mobile')}
           />
-          <Text style={styles.input3}>Password</Text>
+          <Text style={styles.input3}>{strings.PASSWORD}</Text>
           <TextInput
             placeholder="Password"
             style={styles.placeText}

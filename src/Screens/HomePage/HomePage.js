@@ -18,6 +18,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import styles from './styles';
 import commonStyles from '../../styles/commonStyles';
 import fontFamily from '../../styles/fontFamily';
+import strings from '../../constants/lang';
 
 const LIMIT = '10';
 
@@ -128,7 +129,7 @@ export default class Login extends Component {
               ...commonStyles.futuraBtHeavyFont16,
               fontFamily: fontFamily.regular,
             }}>
-            Images
+            {strings.IMAGES}
           </Text>
           <FlatList
             refreshControl={

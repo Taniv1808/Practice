@@ -1,11 +1,12 @@
 import React from 'react';
 import {ActivityIndicator,View,StyleSheet}from 'react-native';
+import colors from '../styles/colors';
 
 export default function Loader({isLoading}){
     if(isLoading){
         return(
         <View style={styles.load}>
-        <ActivityIndicator color="red"  size="large"/>
+        <ActivityIndicator style={styles.activity}  size="large"/>
         </View>
         )
     }
@@ -18,5 +19,9 @@ const styles=StyleSheet.create({
         top:0,right:0,left:0,bottom:0,
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"#dcdcdc"}
+        backgroundColor:"#dcdcdc"
+    },
+    activity:{
+        color:colors.txtColor
+    }
 })

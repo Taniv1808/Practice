@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {CodeField} from 'react-native-confirmation-code-field';
 import Button from '../../Component/Button';
 import Loader from '../../Component/Loader';
+import strings from '../../constants/lang';
 import navigationStrings from '../../constants/navigationStrings';
 import actions from '../../redux/actions';
 import colors from '../../styles/colors';
@@ -48,9 +49,9 @@ export default class OtpVerification extends Component {
     const {isLoading, otp} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.input}> OTP VERIFICATION</Text>
+        <Text style={styles.input}>{strings.OTP_VERIFICATION}</Text>
         <Text style={styles.input2}>
-          ENTER CODE TO VERIFY YOUR EMAIL AND PHONE NUMBER
+          
         </Text>
         <View style={styles.txtInput}>
           <TextInput
@@ -82,7 +83,7 @@ export default class OtpVerification extends Component {
           />
         </View>
         <View style={{marginTop: 20}}>
-          <Button name="Verify Account" pressIt={this.onVerifyOtp} />
+          <Button name={strings.VERIFY_ACCOUNT} pressIt={this.onVerifyOtp} />
         </View>
         <Loader isLoading={isLoading} />
       </View>

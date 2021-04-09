@@ -27,9 +27,6 @@ const styles=StyleSheet.create({
         textAlign:'center',
         alignItems:'center',
         justifyContent:'center',
-       
-        
-
 
     }
 })

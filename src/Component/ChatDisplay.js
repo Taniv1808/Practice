@@ -14,7 +14,7 @@ export default function ChatDisplay(props) {
         
           <Image
             source={{uri: data.userInfo.profileImg[0].thumbnail}}
-            style={{width: 80, height: 80, borderRadius: 40}}
+            style={styles.img}
           />
         
         <View style={styles.txt1}>
@@ -57,5 +57,10 @@ const styles = StyleSheet.create({
   del:{width:20,
     height:20,
     marginLeft:'auto',
-    marginTop:-20}
+    marginTop:-20},
+    img:{
+      width: 80, 
+      height: 80, 
+      borderRadius: 40
+    }
 });
