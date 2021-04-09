@@ -49,15 +49,15 @@ export default class Account extends Component {
 
         <Button name="Logout" pressIt={this.logout} />
         <TouchableOpacity onPress={this.openModal}>
-          <Text style={{textAlign:'center',marginTop:20,fontSize:20}}>{strings.SHOW_MY_QR_CODE}</Text>
+          <Text style={styles.show}>{strings.SHOW_MY_QR_CODE}</Text>
         </TouchableOpacity>
         <Modal visible={isVisible}>
-          <View style={{alignItems: 'center', marginTop: 20}}>
+          <View style={styles.main}>
             <Text style={{fontSize: 20}}>{strings.QR_CODE}</Text>
             <QRCode value="www.google.com" size={200}/>
           </View>
           <TouchableOpacity onPress={this.closeModal}>
-            <Text style={{textAlign:'center',marginTop:20}}>{strings.CLOSE}</Text>
+            <Text style={styles.close}>{strings.CLOSE}</Text>
           </TouchableOpacity>
         </Modal>
         <QRCodeScanner
@@ -71,7 +71,7 @@ export default class Account extends Component {
             </Text>
           }
           centerContent={
-              <Image source={imagePath.down} style={{width:90,height:90}}/>
+              <Image source={imagePath.down} style={styles.content}/>
           }
           bottomContent={
             <TouchableOpacity style={styles.buttonTouchable}>

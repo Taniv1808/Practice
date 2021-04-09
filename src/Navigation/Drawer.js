@@ -3,6 +3,7 @@ import {createDrawerNavigator} from "@react-navigation/drawer"
 import navigationStrings from '../constants/navigationStrings';
 import BottomTabNavigator from './TabRoutes';
 import { Chart, Chat, OneToOneConversation, Stores } from '../Screens';
+import colors from '../styles/colors';
 
 const Drawer = createDrawerNavigator();
 
@@ -10,7 +11,7 @@ function MyDrawer() {
   return (
     <Drawer.Navigator
     drawerStyle={{
-        backgroundColor: '#c6cbef',
+        backgroundColor:colors.drawer ,
         width: 240,
       }}>
       <Drawer.Screen name={navigationStrings.HOMEPAGE} component={BottomTabNavigator}/>

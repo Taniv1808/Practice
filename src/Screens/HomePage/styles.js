@@ -7,5 +7,10 @@ export default StyleSheet.create({
         backgroundColor:colors.themeClr,
         marginBottom:30
     },
+    main:{
+        textAlign: 'center',
+        ...commonStyles.futuraBtHeavyFont16,
+        fontFamily: fontFamily.regular,
+      }
 
 })

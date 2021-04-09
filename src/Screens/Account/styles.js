@@ -40,6 +40,23 @@ export default StyleSheet.create({
       height:250,
       marginLeft:moderateVerticalScale(30),
       marginTop:verticalScale(10)
+    },
+    show:{
+      textAlign:'center',
+      marginTop:20,
+      fontSize:20
+    },
+    main:{
+      alignItems: 'center', 
+      marginTop: 20
+    },
+    close:{
+      textAlign:'center',
+      marginTop:20
+    },
+    content:{
+      width:90,
+      height:90
     }
     
   });

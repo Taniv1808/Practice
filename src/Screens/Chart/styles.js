@@ -19,5 +19,12 @@ export default StyleSheet.create ({
       color: colors.btnColor,
       
     },
+    content:{
+      top: 30, bottom: 30
+    },
+    content1:{
+      top:20,
+      bottom:20
+    }
    
   });

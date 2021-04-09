@@ -59,14 +59,14 @@ export default class Chart extends Component {
           style={styles.bar}
           data={data}
           svg={{fill}}
-          contentInset={{top: 30, bottom: 30}}>
+          contentInset={styles.content}>
           <Grid />
         </BarChart>
         <Text style={styles.main}>{strings.AREA_CHART}</Text>
         <AreaChart
           style={styles.bar}
           data={data}
-          contentInset={{top: 30, bottom: 30}}
+          contentInset={styles.content}
           curve={shape.curveNatural}
           svg={{fill}}>
           <Grid />
@@ -75,8 +75,8 @@ export default class Chart extends Component {
         <LineChart
           style={styles.bar}
           data={data}
-          svg={{stroke: 'rgb(129, 30, 144)'}}
-          contentInset={{top: 20, bottom: 20}}>
+          svg={{stroke:colors.chart}}
+          contentInset={styles.content}>
           <Grid />
         </LineChart>
         <Text style={styles.main}>{strings.PIE_CHART}</Text>

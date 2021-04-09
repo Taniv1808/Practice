@@ -1,6 +1,7 @@
 import React from 'react'
 import {View,Text,StyleSheet,Image} from 'react-native'
 import strings from '../constants/lang'
+import commonStyles from '../styles/commonStyles'
 import fontFamily from '../styles/fontFamily'
 
 export default function OneToOneChat(props) {
@@ -41,7 +42,7 @@ const styles=StyleSheet.create({
       },
       txt:{
         textAlign:'center',
-        fontSize:18,
+        ...commonStyles.mediumFont16,
         fontFamily:fontFamily.regular
       },
       img:{

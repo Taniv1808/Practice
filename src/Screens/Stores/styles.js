@@ -20,5 +20,28 @@ export default StyleSheet.create({
       marginTop: moderateVerticalScale(20),
       marginBottom: 10,
     },
+    search1:{
+        width: 290,
+        borderWidth: 0.2,
+        borderRadius: 10,
+        height: 40,
+        marginTop: 2,
+      },
+      locate:{
+        marginLeft: 35,
+        marginTop:10,
+        borderWidth: 0.2,
+        width: 220,
+        height: 30,
+        textAlign: 'center',
+        borderRadius: 10,
+        backgroundColor: '#dcdcdc',
+        padding:4,
+      },
+      activity:{
+          position: 'absolute', 
+          marginLeft: 230, 
+          marginTop: 10
+        }
   });
   

@@ -67,34 +67,18 @@ export default class Stores extends Component {
         <View style={styles.search}>
           <TextInput
             placeholder="Search here..."
-            style={{
-              width: 290,
-              borderWidth: 0.2,
-              borderRadius: 10,
-              height: 40,
-              marginTop: 2,
-            }}
+            style={styles.search1}
             onChangeText={this.onChangeText}
           />
           <TouchableOpacity onPress={this.locationPermission}>
             <Text
-              style={{
-                marginLeft: 35,
-                marginTop:10,
-                borderWidth: 0.2,
-                width: 220,
-                height: 30,
-                textAlign: 'center',
-                borderRadius: 10,
-                backgroundColor: '#dcdcdc',
-                padding:4,
-              }}>
+              style={styles.locate}>
               {strings.FIND_NEAR_ME}
             </Text>
           </TouchableOpacity>
           {isLoading ? (
             <ActivityIndicator
-              style={{position: 'absolute', marginLeft: 230, marginTop: 10}}
+              style={styles.activity}
             />
           ) : null}
         </View>

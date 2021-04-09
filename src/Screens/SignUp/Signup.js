@@ -115,7 +115,7 @@ export default class Signup extends Component {
             onPress={() => {
               this.props.navigation.navigate(navigationStrings.LOGIN);
             }}>
-            <Text style={{color: 'blue'}}>{strings.LOGIN}</Text>
+            <Text style={{color:colors.touch}}>{strings.LOGIN}</Text>
           </TouchableOpacity>
         </View>
       </View>

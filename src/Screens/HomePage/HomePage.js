@@ -124,11 +124,7 @@ export default class Login extends Component {
       <WrapperContainer isLoading={isLoading}>
         <View style={styles.container}>
           <Text
-            style={{
-              textAlign: 'center',
-              ...commonStyles.futuraBtHeavyFont16,
-              fontFamily: fontFamily.regular,
-            }}>
+            style={styles.main}>
             {strings.IMAGES}
           </Text>
           <FlatList
