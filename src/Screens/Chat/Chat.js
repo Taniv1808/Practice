@@ -14,7 +14,6 @@ export default class Chat extends Component {
     limit: 10,
     skip: 0,
     isLoading: true,
-    commonConversationData: [],
   };
 
   getData = query => {
@@ -29,34 +28,30 @@ export default class Chat extends Component {
       });
   };
 
+
+
+
+  goToChatScreen=item=>{
+    let query=`?commonConversationId=${item.commonConversationId}`;
+    this.props.navigation.navigate(navigationStrings.ONE_TO_ONE,{
+      commonConversationId: item.commonConversationId,
+      profileImage: item.userInfo.profileImg[0].thumbnail,
+      name: item.userInfo.fullName,
+      id: item.userInfo._id,
+      lastSeen: item.updatedAt.slice(11, 19),
+  })
+  }
+
+
+
   componentDidMount = () => {
     const {limit, skip} = this.state;
     let query = `?limit= ${limit}&skip=${skip}`;
     this.getData(query);
   };
 
-  getChat = commonConversationId => {
-    let query = `?commonConversationId=${commonConversationId}`;
-    this.setState({isLoading: true, commonConversationData: []}, () => {
-      actions
-        .OneToOneText(query)
-        .then(res => {
-          this.props.navigation.navigate(navigationStrings.ONE_TO_ONE, {
-            data: res.data,
-          });
-          this.setState({commonConversationData: res.data, isLoading: false});
-        })
-        .catch(err => this.setState({isLoading: false}));
-    });
-  };
-  //   const {isLoading,commonConversationData}=this.state
-  //   OneToOneText(query).then(res=>{
-  //     this.props.navigation.navigate(navigationStrings.ONE_TO_ONE,{commonConversationData:res.data})
-  //     this.setState({commonConversationData:res.data,isLoading:false})
-  //   }).catch(err=>{
-  //     this.setState({isLoading:false})
-  //   })
-  // }
+  
+
 
   render() {
     const {data} = this.state;
@@ -72,7 +67,7 @@ export default class Chat extends Component {
             <View style={{marginBottom: 10}}></View>
           )}
           renderItem={({item}) => (
-            <ChatDisplay data={item} moveTo={this.getChat} />
+            <ChatDisplay data={item} goToChatScreen={this.goToChatScreen}/>
           )}
         />
       </View>

@@ -8,5 +8,6 @@ export default{
         chat:require('../assets/images/chat.png'),
         red:require('../assets/images/red.jpg'),
         green:require('../assets/images/greeen.png'),
-        delete:require('../assets/images/delete.png') 
+        delete:require('../assets/images/delete.png') ,
+        back:require('../assets/images/back.png')
 }

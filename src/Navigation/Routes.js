@@ -12,7 +12,7 @@ function Routes(props) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {props.userData && AuthStack(Stack)}
+        {!(props.userData) && AuthStack(Stack)}
         {MainStack(Stack)}  
       </Stack.Navigator>
     </NavigationContainer>

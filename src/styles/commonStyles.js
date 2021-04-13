@@ -56,7 +56,7 @@ export default StyleSheet.create({
     fontSize:textScale(16),
     color:colors.black,
     fontFamily:fontFamily.futuraHeavyBt
-  },
+  }
   
   
 });

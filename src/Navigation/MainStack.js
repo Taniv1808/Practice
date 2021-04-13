@@ -1,8 +1,8 @@
 import React from 'react'
-import OneToOneChat from '../Component/OneToOneChat'
 import { OneToOneConversation_API } from '../config/urls'
 import navigationStrings from '../constants/navigationStrings'
 import { OneToOneConversation } from '../Screens'
+import OneToOneChat from '../Screens/OneToOneChat/OneToOneChat'
 import MyDrawer from './Drawer'
 
 export default function(Stack){

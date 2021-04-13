@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import {createDrawerNavigator} from "@react-navigation/drawer"
 import navigationStrings from '../constants/navigationStrings';
 import BottomTabNavigator from './TabRoutes';

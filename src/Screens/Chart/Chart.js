@@ -76,7 +76,7 @@ export default class Chart extends Component {
           style={styles.bar}
           data={data}
           svg={{stroke:colors.chart}}
-          contentInset={styles.content}>
+          contentInset={styles.content1}>
           <Grid />
         </LineChart>
         <Text style={styles.main}>{strings.PIE_CHART}</Text>

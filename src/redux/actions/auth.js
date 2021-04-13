@@ -77,8 +77,8 @@ export const loginUsingPhone=(data)=>{
   return new Promise((resolve, reject)=>{
     apiPost(PHONE_API, data).then((res)=>{
 
-      saveUserData(data);
-      setUserData(data);
+      saveUserData(res.data);
+      setUserData(res.data);
        resolve(res)
     }).catch((error)=>{
       reject(error)
@@ -90,7 +90,7 @@ export const loginUsingPhone=(data)=>{
 export const _OtpVerification=(data)=>{
   return new Promise((resolve, reject)=>{
     apiPost(OTPVERIFICATION_API, data).then((res)=>{
-      // saveUserData(res.data);
+      saveUserData(res);
       setUserData(res.data);
       console.log(res.data);
       resolve(res);

@@ -12,12 +12,9 @@ export default class App extends Component{
 componentDidMount=()=>{
     getUserData().then((res)=>{
       console.log(res, 'userData');
-      saveUserData(res.data);
-    }).catch(error=>{
-      console.log(error, 'error');
+      saveUserData(res);
+      SplashScreen.hide()
     })
-    SplashScreen.hide();
-    requestUserPermission();
   }
   render(){
     return(

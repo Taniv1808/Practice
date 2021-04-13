@@ -5,13 +5,12 @@ import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
 
 export default function ChatDisplay(props) {
-  const {data} = props;
-  const navigation = useNavigation();
+  const {data, goToChatScreen} = props;
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate(navigationStrings.ONE_TO_ONE, {xyz: data});
+          goToChatScreen(data);
         }}>
         <View style={styles.main}>
           <Image
@@ -56,10 +55,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   del: {
-    width: 20, 
-    height: 20, 
-    marginLeft: 'auto', 
-    marginTop: -20
+    width: 20,
+    height: 20,
+    marginLeft: 'auto',
+    marginTop: -20,
   },
   img: {
     width: 80,

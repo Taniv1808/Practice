@@ -13,7 +13,6 @@ export default function Button(props){
     )
 }
 
-
 // Stylesheet
 const styles=StyleSheet.create({
     btn:{

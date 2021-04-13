@@ -1,11 +1,12 @@
 import types from "../types";
 
 const initial_state = {
-    userData: []
+    userData: {}
 }
 
-export default function (state = initial_state, action) {
-    
+export default function reducer (state = initial_state, action) {
+    let {userData}=state
+    console.log(userData+'idnknv')
     switch (action.type) {
         case types.LOGIN: {
             return { 
