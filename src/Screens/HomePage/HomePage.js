@@ -11,13 +11,10 @@ import Loader from '../../Component/Loader';
 import Test from '../../Component/Test';
 import WrapperContainer from '../../Component/WrapperContainer';
 import actions from '../../redux/actions';
-// import { conversation, find_text, scrollApi } from '../../redux/actions/action';
 import colors from '../../styles/colors';
 import Button from '../../Component/Button';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import styles from './styles';
-import commonStyles from '../../styles/commonStyles';
-import fontFamily from '../../styles/fontFamily';
+import styles from './styles';;
 import strings from '../../constants/lang';
 
 const LIMIT = '10';

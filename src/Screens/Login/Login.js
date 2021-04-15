@@ -26,7 +26,7 @@ export default class Login extends Component {
     isLoading: false,
   };
 
-  onChange(key) {
+  onChange=(key)=> {
     return value => {
       this.setState({
         [key]: value,

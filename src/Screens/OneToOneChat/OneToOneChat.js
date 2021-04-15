@@ -68,6 +68,7 @@ class OneToOneChat extends Component {
   }
 
   getChatListing = () => {
+
     const {commonConversationId, id,profileImage} = this.props.route.params;
     console.log('@@ get chat listing',commonConversationId, id)
     const {userData}=this.state;

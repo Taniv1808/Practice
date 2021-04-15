@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ChatDisplay from '../../Component/ChatDisplay';
+import Loader from '../../Component/Loader';
 import strings from '../../constants/lang';
 import navigationStrings from '../../constants/navigationStrings';
 import actions from '../../redux/actions';
 import {conversation, OneToOneText} from '../../redux/actions/action';
 import styles from './styles';
-styles;
 
 export default class Chat extends Component {
   state = {
@@ -28,9 +28,6 @@ export default class Chat extends Component {
       });
   };
 
-
-
-
   goToChatScreen=item=>{
     let query=`?commonConversationId=${item.commonConversationId}`;
     this.props.navigation.navigate(navigationStrings.ONE_TO_ONE,{
@@ -42,19 +39,14 @@ export default class Chat extends Component {
   })
   }
 
-
-
   componentDidMount = () => {
     const {limit, skip} = this.state;
     let query = `?limit= ${limit}&skip=${skip}`;
     this.getData(query);
   };
 
-  
-
-
   render() {
-    const {data} = this.state;
+    const {data,isLoading} = this.state;
     return (
       <View>
         <Text style={styles.txt}>{strings.CHAT_ROOM}</Text>
@@ -69,7 +61,8 @@ export default class Chat extends Component {
           renderItem={({item}) => (
             <ChatDisplay data={item} goToChatScreen={this.goToChatScreen}/>
           )}
-        />
+        />       
+        <Loader isLoading={isLoading}/> 
       </View>
     );
   }
