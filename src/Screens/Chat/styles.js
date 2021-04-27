@@ -6,7 +6,7 @@ import commonStyles from "../../styles/commonStyles";
 
 export default StyleSheet.create({
     txt:{
-        ...commonStyles.mediumFont16,
+        ...commonStyles.futuraBtHeavyFont30,
         textAlign:'center'
       }
 })

@@ -1,10 +1,19 @@
 import {StyleSheet} from 'react-native'
 import colors from "../../styles/colors";
+import commonStyles from '../../styles/commonStyles';
 import fontFamily from "../../styles/fontFamily";
 import { moderateVerticalScale, scale, textScale, verticalScale } from '../../styles/responsiveSize';
 
 
 export default StyleSheet.create ({
+  container:{
+    flex:1
+  },
+  txt:{
+      ...commonStyles.futuraBtHeavyFont30,
+      textAlign: 'center',
+      marginTop:moderateVerticalScale(20)
+  },
     bar: {
       height: verticalScale(300),
       width: scale(300),

@@ -12,7 +12,7 @@ export default StyleSheet.create({
     },
     input: {
       textAlign: 'center',
-      ...commonStyles.futuraBtHeavyFont16,
+      ...commonStyles.futuraBtHeavyFont30,
       marginTop: moderateVerticalScale(20),
     },
     search: {
@@ -28,15 +28,14 @@ export default StyleSheet.create({
         marginTop: 2,
       },
       locate:{
-        marginLeft: 35,
-        marginTop:10,
+        margin:30,
         borderWidth: 0.2,
         width: 220,
-        height: 30,
+        height: 35,
         textAlign: 'center',
         borderRadius: 10,
         backgroundColor: '#dcdcdc',
-        padding:4,
+        paddingVertical:6
       },
       activity:{
           position: 'absolute', 

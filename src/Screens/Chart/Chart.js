@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, ScrollView} from 'react-native';
+import {Text, StyleSheet, ScrollView,View} from 'react-native';
 import {
   BarChart,
   Grid,
@@ -53,7 +53,10 @@ export default class Chart extends Component {
       }));
 
     return (
+      <View style={styles.container}>
+      <Text style={styles.txt}>{strings.CHARTS}</Text>
       <ScrollView>
+        
         <Text style={styles.main}>{strings.BAR_GRAPH}</Text>
         <BarChart
           style={styles.bar}
@@ -82,6 +85,7 @@ export default class Chart extends Component {
         <Text style={styles.main}>{strings.PIE_CHART}</Text>
         <PieChart style={styles.bar} data={pieChartData} />
       </ScrollView>
+      </View>
     );
   }
 }

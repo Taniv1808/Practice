@@ -11,8 +11,7 @@ export default StyleSheet.create({
     input: {
       textAlign: 'center',
       marginTop: verticalScale(20),
-      ...commonStyles.mediumFont16,
-      fontFamily:fontFamily.regular
+      ...commonStyles.futuraBtHeavyFont30,
     },
     centerText: {
       flex: 1,
@@ -60,3 +59,4 @@ export default StyleSheet.create({
     }
     
   });
+  

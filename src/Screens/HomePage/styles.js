@@ -11,8 +11,7 @@ export default StyleSheet.create({
     },
     main:{
         textAlign: 'center',
-        ...commonStyles.futuraBtHeavyFont16,
-        fontFamily: fontFamily.regular,
+        ...commonStyles.futuraBtHeavyFont30,
       }
 
 })

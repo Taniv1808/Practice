@@ -22,5 +22,6 @@ export default{
     NAME:'Name',
     STORES:'Stores',
     FIND_NEAR_ME:'Find Near Me',
-    PRIVATE_ROOM:'Private Room'
+    PRIVATE_ROOM:'Private Room',
+    CHARTS:'Charts'
 }

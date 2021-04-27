@@ -56,7 +56,13 @@ export default StyleSheet.create({
     fontSize:textScale(16),
     color:colors.black,
     fontFamily:fontFamily.futuraHeavyBt
-  }
+  },
+  futuraBtHeavyFont30:{
+    fontSize:textScale(30),
+    color:colors.black,
+    fontFamily:fontFamily.futuraBtHeavy
+    
+  },
   
   
 });

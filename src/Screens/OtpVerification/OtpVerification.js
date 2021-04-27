@@ -88,5 +88,5 @@ export default class OtpVerification extends Component {
         <Loader isLoading={isLoading} />
       </View>
     );
+    }
   }
-}

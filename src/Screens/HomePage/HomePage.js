@@ -14,7 +14,7 @@ import actions from '../../redux/actions';
 import colors from '../../styles/colors';
 import Button from '../../Component/Button';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import styles from './styles';;
+import styles from './styles';
 import strings from '../../constants/lang';
 
 const LIMIT = '10';
